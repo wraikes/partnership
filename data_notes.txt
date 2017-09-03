@@ -12,6 +12,65 @@ NOTES TO SELF:
 - Create a sheet documenting the different label names.
 - Need to know which columns can be included only once
 
+##################################
+################SAGE
+##################################
+
+TO DO:
+    - Fix notes / documentation    
+
+NOTES FOR TEAM:
+    - Following 'test_user' records are removed: ULoF3MM1nN gSWn9N D5bzYrfd8E ThpMV2Achc
+    
+Dataframe Columns Creation:
+    
+    bart_v4
+        - Created columns for baseline, 21-day-assessment, bart250, bart0.25
+    
+    behavior_choices_4
+        - Created columns for baseline (not reenrollment - has duplicates)
+      
+    delay_discounting
+        - Created columns for baseline, 21-day-assessment, dd_time_6_month, dd_money_6_month, 
+          dd_money_1_month, dd_time_1_year    
+    
+    discounting_raw
+        - Created columns for baseline, 21-day-assessment, money, probability.
+        
+    evening_notification
+        - Only included "baseline" data.  Did not include "reenrollment" or "set_evening_survey" because of
+          duplicates.
+        
+    gonogo
+        - NEED TO RECTIFY DUPLICATES (ksJM3Y)
+        
+    morning_notification
+        - created columns for baseline only.
+    
+    PAM multiple
+        - created columns for baseline and 21-day-assessment.
+        
+Missing Dataframes
+
+        PAM_v2                        | ONLY INCLUDES AM_SURVEY AND PM_SURVEY
+        EVENING SEM DIFF              | ONLY INCLUDE AM AND PM SURVEY
+        Morning Behavior              | ONLY INCLUDES AM_SURVEY
+        Morning Yesterday Sem Diff    | ONLY INCLUDES AM_SURVEY
+        Morning Yesterday Likert      | ONLY INCLUDES AM_SURVEY
+        Morning Semantics             | ONLY INCLUDES AM_SURVEY
+        Comments_v2                   | Has duplicates
+      
+Unexplained duplicates (file, id's):
+        - digital-marshmallow-as_a_child_likert_bl-v2_8.8.17.csv  | ThpMV2Achc
+        - digital-marshmallow-behavior_choices_1_bl-v1_8.8.17.csv | ThpMV2Achc
+        - digital-marshmallow-demographics-v2_8.8.17.csv          | ThpMV2Achc
+        - digital-marshmallow-behavior_likert_bl-v2_8.8.17.csv    | ThpMV2Achc
+        - digital-marshmallow-generally_sem_diff_bl-v2_8.8.17.csv | ThpMV2Achc
+        - digital-marshmallow-past_year_likert_bl-v3_8.8.17.csv   | ThpMV2Achc
+        - digital-marshmallow-comments-v2_8.8.17.csv              | CdtW9X Db8hWK
+
+
+
 
 
 
