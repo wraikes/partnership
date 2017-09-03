@@ -1,0 +1,18 @@
+NOTES FOR TEAM:
+
+- All directory and file names should omit spaces.  Underscores is a recommended alternative.
+  - For example: "Inquisit Merged Data" -> "Inquisit_Merged_Data"
+
+
+NOTES TO SELF:
+
+- Use indices for externalID and internalID
+- Drop extra blank rows in datafiles (not sure why xls to csv keeps them).
+- Test all data shapes and make sure nothing is omitted.
+- Create a sheet documenting the different label names.
+- Need to know which columns can be included only once
+
+
+
+
+
