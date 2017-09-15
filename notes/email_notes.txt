@@ -1,0 +1,33 @@
+
+1.       For gSWn9N, please remove whichever duplicate row occurs later. Or, anything that is duplicative that occurs after the last row of 21-day assessment.
+2.       For ksJM3Y, lease remove row 669.
+3.       I’ll take a closer look at yQ7pYy over the weekend and get back to you, but there is another set of external IDs that I forgot to mention to disregard, as they belong to a different study. They are as follows:
+·         rL8eA3 – I believe this one came up somewhere in our data. Please remove it entirely.
+·         rLg5xs
+·         rLrD9h
+·         rLP7H2
+·         rL6s6h
+·         aOyzBg
+·         aORA43
+·         aOh48U
+·         aOLu4K
+·         aOQtxv
+·         aO5TvQ
+·         mPC9S8
+·         mPgquX
+·         mP5xkB
+·         mPSQvh
+·         mPYk2p
+·         mP3rbd
+
+
+
+
+
+Billy, I reviewed the 76 external IDs from Sage and have some notes that are in the missing data document as well as in “DMT Totals Explained” (attached). I combed through the REDCap and Inquisit data and found that we currently have data from 103 participants, though many are missing something even if it’s minor.
+ 
+It looks like I only defined 67 pts as fully complete (highlighted in yellow). The other 9 pts that you included from Sage are either missing something minor (which is okay), are still in progress (which is okay), OR have the note “did not complete 21 days”. I’d like to talk about those when you have a chance (2XyVyJ and La8P5V), because to my knowledge these pts shouldn’t have any Sage data (not complaining if they do!).
+ 
+I just wanted to share and maybe this can help to keep us organized moving forward, as the last day of Sage data should be 10/7/17.
+ 
+I’m waiting on some comments from Fred if he has time over the weekend regarding the poster, and then I will get back to you on what more needs to be done, also only if you have the time.
