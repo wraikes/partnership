@@ -3,7 +3,10 @@ from functools import reduce
 
 #NOTE TO SELF: redo the relative paths.
 inquisit = '/home/wraikes/Dropbox/partnership/DMTdata_9_8_17/inquisit/'
+os_file = '/home/wraikes/Programming/Partnership/dmt/final/merged_data/'
 #inquisit = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt_temp'
+#os_file = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
+
 os.chdir(inquisit)  
 
 bart = pd.read_csv('BART_Merged_9.8.17.csv')
@@ -40,19 +43,18 @@ def column_relabel(df, append_1, col_name):
     return new_cols
 
 def merge_data(_dfs, _names, _id):
-    new_df = []
+    new_dfs = []
     
     for df, name in zip(_dfs, _names):
         df.columns = column_relabel(df, name, _id)
-        new_df.append(df)
+        new_dfs.append(df)
 
-    new_file = reduce(lambda left, right: pd.merge(left, right, how = 'outer',
-                                                         on=_id), 
-                                                         new_df)
-    return new_file
+    new_df = reduce(lambda left, right: pd.merge(left, right, how = 'outer',
+                                                 on=_id), 
+                                                 new_dfs)
+    return new_df
 
-os_file = '/home/wraikes/Programming/Partnership/dmt/final/merged_data/'
-#os_file = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
+
 
 inquisit_merge = merge_data(dfs, names, 'script.subjectid')
 os.chdir(os_file)
