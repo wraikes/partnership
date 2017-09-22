@@ -1,25 +1,13 @@
 import os, pandas as pd, numpy as np
 from functools import reduce
 
-#NOTE TO SELF: redo the relative paths.
-redcap = '/home/wraikes/Dropbox/partnership/DMTdata_9_8_17/redcap'
-os_file = '/home/wraikes/Programming/Partnership/dmt/final/merged_data/'
-#redcap = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt_temp'
-#os_file = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
-
-os.chdir(redcap)  
-
-block1 = pd.read_csv('REDCap Block 1_Merged_9.8.17.csv')
-block2 = pd.read_csv('REDCap Block 2_Merged_9.8.17.csv')
-
-dfs = [block1, block2]
-names = ['REDCAP_block1___', 'REDCAP_block2___']
 
 def data_clean(df):
     if any(df['external_id'] == '2XyZyJ'):
         ix = df.index[df['external_id'] == '2XyZyJ']
         df = df.set_value(ix, 'external_id', '2XyVyJ')
     return df
+
 
 def column_relabel(df, append, col_name):
     
@@ -38,6 +26,7 @@ def column_relabel(df, append, col_name):
     
     return new_cols
 
+
 def merge_data(_dfs, _names, _id):
     new_dfs = []
     
@@ -51,6 +40,7 @@ def merge_data(_dfs, _names, _id):
                                                  on=_id), 
                                                  new_dfs)
     return new_df
+
 
 def remove_dupes(df):
     
@@ -90,7 +80,28 @@ def remove_dupes(df):
     
     return df[~df['external_id'].isin(test_users + diff_study)] 
 
-redcap_merge = merge_data(dfs, names, 'internal_id')
-os.chdir(os_file)
-redcap_merge.to_csv('FINAL_REDCAP.csv', index=False)
+
+def main():
+    #NOTE TO SELF: redo the relative paths.
+    redcap = '/home/wraikes/Dropbox/partnership/dmt/data/redcap_final/'
+    os_file = '/home/wraikes/Programming/Partnership/dmt/final/merged_data/'
+    #redcap = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt_temp'
+    #os_file = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
+    os.chdir(redcap)  
+
+    block1 = pd.read_csv('REDCap_Block 1_Merged_9.15.17.csv')
+    block2 = pd.read_csv('REDCap_Block 2_Merged_9.15.17.csv')
+
+    dfs = [block1, block2]
+    names = ['REDCAP_block1___', 'REDCAP_block2___']    
+    
+    redcap_merge = merge_data(dfs, names, 'internal_id')
+    os.chdir(os_file)
+    redcap_merge.to_csv('FINAL_REDCAP.csv', index=False)
+
+    
+if __name__ == '__main__':
+    main()
+    
+
 

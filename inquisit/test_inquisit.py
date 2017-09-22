@@ -1,7 +1,7 @@
 import unittest, pandas as pd, os
 from inquisit import column_relabel, merge_data	
 
-inquisit = '/home/wraikes/Dropbox/partnership/DMTdata_9_8_17/inquisit/'
+inquisit = '/home/wraikes/Dropbox/partnership/dmt/data/inquisit_final/'
 #inquisit = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt_temp'
 
 
@@ -9,11 +9,11 @@ class TestInquisit(unittest.TestCase):
     def setUp(self):
         os.chdir(inquisit)
         
-        self.bart = pd.read_csv('BART_Merged_9.8.17.csv')
-        self.delay1 = pd.read_csv('DelayDiscounting_Current_Merged_9.8.17.csv')
+        self.bart = pd.read_csv('BART_Merged_9.15.17.csv')
+        self.delay1 = pd.read_csv('DelayDiscounting_Current_Merged_9.15.17.csv')
         self.delay2 = pd.read_csv('DelayDiscounting_Original_Merged_9.8.17.csv')
         self.delay3 = pd.read_csv('DelayDiscounting_v2_Merged_9.8.17.csv')
-        self.gonogo = pd.read_csv('GoNoGo_Merged_9.8.17.csv')
+        self.gonogo = pd.read_csv('GoNoGo_Merged_9.15.17.csv')
 
         self.dfs = [self.bart, self.delay1, self.delay2, self.delay3, self.gonogo]
 

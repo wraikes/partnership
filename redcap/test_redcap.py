@@ -1,7 +1,7 @@
 import pandas as pd, unittest, os
 from redcap import data_clean, column_relabel, remove_dupes, merge_data
 
-redcap = '/home/wraikes/Dropbox/partnership/DMTdata_9_8_17/redcap/'
+redcap = '/home/wraikes/Dropbox/partnership/dmt/data/redcap_final/'
 #redcap = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt_temp'
 
 class TestRedcap(unittest.TestCase):
@@ -9,8 +9,8 @@ class TestRedcap(unittest.TestCase):
     def setUp(self):
         os.chdir(redcap)
         
-        self.block1 = pd.read_csv('REDCap Block 1_Merged_9.8.17.csv')
-        self.block2 = pd.read_csv('REDCap Block 2_Merged_9.8.17.csv')
+        self.block1 = pd.read_csv('REDCap_Block 1_Merged_9.15.17.csv')
+        self.block2 = pd.read_csv('REDCap_Block 2_Merged_9.15.17.csv')
         
         self.dfs = [self.block1, self.block2]
         
