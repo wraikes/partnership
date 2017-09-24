@@ -11,8 +11,9 @@ def column_relabel(df, prefix, merge_col):
     new_cols = []
     for col in df.columns:
         if col != merge_col:
-            new_col = col.replace(' ', '_')
             new_col = prefix + col
+            new_col = new_col.replace(' ', '_')
+            new_col = new_col.replace('-', '_')
             new_cols.append(new_col)
         else:
             new_cols.append(col)

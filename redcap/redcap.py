@@ -9,7 +9,7 @@ def data_clean(df):
     return df
 
 
-def column_relabel(df, append, col_name):
+def column_relabel(df, prefix, col_name):
     
     '''A function to relabel the columns
     with the df name appended to each 
@@ -18,8 +18,9 @@ def column_relabel(df, append, col_name):
     new_cols = []
     for col in df.columns:
         if col != col_name:
-            new_col = col.replace(' ', '_')
-            new_col = append + col
+            new_col = prefix + col
+            new_col = new_col.replace(' ', '_')
+            new_col = new_col.replace('-', '_')
             new_cols.append(new_col)
         else:
             new_cols.append(col)
