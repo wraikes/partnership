@@ -27,7 +27,8 @@ class TestRedcap(unittest.TestCase):
             'WbbNWM4RAF', 
             'D5bzYrfd8E', 
             'LJcmEFWp74', 
-            'ULoF3MM1nN'
+            'ULoF3MM1nN',
+            'G9Bbsg'
         ]
 
         self.diff_study = [

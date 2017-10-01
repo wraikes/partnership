@@ -56,7 +56,8 @@ def remove_dupes(df):
         'WbbNWM4RAF', 
         'D5bzYrfd8E', 
         'LJcmEFWp74', 
-        'ULoF3MM1nN'
+        'ULoF3MM1nN',
+        'G9Bbsg'
     ]
 
     diff_study = [
