@@ -1,9 +1,3 @@
-NOTES FOR TEAM:
-
-- All directory and file names should omit spaces.  Underscores is a recommended alternative.
-  - For example: "Inquisit Merged Data" -> "Inquisit_Merged_Data"
-
-
 NOTES TO SELF:
 
 - Use indices for externalID and internalID
