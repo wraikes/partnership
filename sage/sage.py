@@ -3,9 +3,10 @@ from functools import reduce
 
 
 def main():
-    #sage = '/home/wraikes/Dropbox/partnership/dmt/data/sage_not_final'
-    sage = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt\data\sage_not_final'
-    file_to_write = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
+    sage = '/home/wraikes/Dropbox/partnership/dmt/data/sage_not_final'
+    #sage = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt\data\sage_not_final'
+    file_to_write = '/home/wraikes/Programming/Partnership/dmt/final/merged_data'
+    #file_to_write = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
     os.chdir(sage)
     
     files_to_exclude = ['digital-marshmallow-status_8.31.17.csv',
