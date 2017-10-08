@@ -1,0 +1,3 @@
+These are scripts for the cleaning, processing, and analyzing of the Digital Marshmallow Test (DMT) project.  
+
+There are three main datasets: inquisit, redcap and sage.  The purpose of the scripts is to automate, and unit test, the data files which come in batches.  The final dataset is scheduled to be delivered in the second week of October.
