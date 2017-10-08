@@ -1,2 +1,0 @@
-- REDCAP: Extra duplicate record, see script for specifics.
-- 
