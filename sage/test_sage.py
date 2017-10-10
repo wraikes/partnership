@@ -2,7 +2,7 @@ import pandas as pd, unittest, os, re, numpy as np
 from sage import *
 
 
-sage = '/home/wraikes/Dropbox/partnership/dmt/data/sage_not_final/'
+sage = '/home/wraikes/Dropbox/partnership/dmt/data/sage_final/'
 #sage = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt_temp\Sage (Mobile Phone) Data 8.31.17'
 
 
@@ -11,7 +11,7 @@ class TestSage(unittest.TestCase):
     def setUp(self):           
         os.chdir(sage)
         
-        self.bart = pd.read_csv('digital-marshmallow-bart-v4_8.31.17.csv')
+        self.bart = pd.read_csv('digital-marshmallow-bart-v4.csv')
        
         self.test_users = [
             'ThpMV2Achc', 
@@ -48,15 +48,15 @@ class TestSage(unittest.TestCase):
         ]
 
         self.files_to_exclude = [
-                'digital-marshmallow-status_8.31.17.csv',
-                'digital-marshmallow-appVersion_8.31.17.csv'
+                'digital-marshmallow-status.csv',
+                'digital-marshmallow-appVersion.csv'
             ]
             
-        self.end_string = '_8.31.17.csv'  
+        self.end_string = '.csv'  
         
         
     def test_create_df_name(self):
-        bart_string = 'digital-marshmallow-bart-v4_8.31.17.csv'
+        bart_string = 'digital-marshmallow-bart-v4.csv'
         string = create_df_name(bart_string, self.end_string)
             
         self.assertEqual('bart-v4', string)
@@ -109,7 +109,7 @@ class TestSage(unittest.TestCase):
                          new_df.shape[1])        
         
     def test_spread_cols_delay(self):
-        delay = pd.read_csv('digital-marshmallow-delay_discounting_raw-v6_8.31.17.csv')
+        delay = pd.read_csv('digital-marshmallow-delay_discounting_raw-v6.csv')
         bl = 'baseline'
         _21 = '21-day-assessment'
         

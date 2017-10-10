@@ -3,15 +3,15 @@ from functools import reduce
 
 
 def main():
-    sage = '/home/wraikes/Dropbox/partnership/dmt/data/sage_not_final'
+    sage = '/home/wraikes/Dropbox/partnership/dmt/data/sage_final'
     #sage = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt\data\sage_not_final'
     file_to_write = '/home/wraikes/Programming/Partnership/dmt/final/merged_data'
     #file_to_write = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
     os.chdir(sage)
     
-    files_to_exclude = ['digital-marshmallow-status_8.31.17.csv',
-                        'digital-marshmallow-appVersion_8.31.17.csv']
-    end_string = '_8.31.17.csv'
+    files_to_exclude = ['digital-marshmallow-status.csv',
+                        'digital-marshmallow-appVersion.csv']
+    end_string = '.csv'
     bl = 'baseline'
     _21 = '21-day-assessment'
     
@@ -27,7 +27,7 @@ def main():
         [_21, 'BART250.00']       
     ]
     
-    bart_df = clean_df('digital-marshmallow-bart-v4_8.31.17.csv',
+    bart_df = clean_df('digital-marshmallow-bart-v4.csv',
                    end_string,
                    bart_att,
                    var_2='data.json.variable_label')
@@ -43,7 +43,7 @@ def main():
         [_21, 'dd_time_1_year']            
     ]
     
-    delay_df = clean_df('digital-marshmallow-delay_discounting_raw-v6_8.31.17.csv',
+    delay_df = clean_df('digital-marshmallow-delay_discounting_raw-v6.csv',
                     end_string,
                     delay_att,
                     var_2='data.json.variableLabel')    
@@ -55,7 +55,7 @@ def main():
         [bl]
     ]
     
-    behave_4_df = clean_df('digital-marshmallow-behavior_choices_4_bl-v2_8.31.17.csv',
+    behave_4_df = clean_df('digital-marshmallow-behavior_choices_4_bl-v2.csv',
                        end_string,
                        behave_4_att)
     
@@ -68,7 +68,7 @@ def main():
         [_21, 'pd_constant_probability']
     ]
     
-    discount_df = clean_df('digital-marshmallow-discounting_raw-v2_8.31.17.csv',
+    discount_df = clean_df('digital-marshmallow-discounting_raw-v2.csv',
                       end_string,
                       discount_att,
                       var_2='data.json.variableLabel')
@@ -77,7 +77,7 @@ def main():
         [bl]
     ] 
     
-    evening_note_df = clean_df('digital-marshmallow-evening_notification_time-v2_8.31.17.csv', 
+    evening_note_df = clean_df('digital-marshmallow-evening_notification_time-v2.csv', 
                            end_string,
                            evening_note_att) 
     
@@ -88,7 +88,7 @@ def main():
         [_21, 'go_no_go_variable_stimulus_active_task']
     ]
     
-    gonogo_df = clean_df('digital-marshmallow-goNoGo-v2_8.31.17.csv', 
+    gonogo_df = clean_df('digital-marshmallow-goNoGo-v2.csv', 
                      end_string,
                      gonogo_att,
                      var_2='data.json.variable_label')
@@ -97,7 +97,7 @@ def main():
         [bl]
     ]   
     
-    morning_note_df = clean_df('digital-marshmallow-morning_notification_time-v3_8.31.17.csv',
+    morning_note_df = clean_df('digital-marshmallow-morning_notification_time-v3.csv',
                           end_string,
                           morning_note_att)
     
@@ -106,7 +106,7 @@ def main():
         [_21]
     ]
      
-    pam_mult_df = clean_df('digital-marshmallow-pam_multiple-v2_8.31.17.csv',
+    pam_mult_df = clean_df('digital-marshmallow-pam_multiple-v2.csv',
                       end_string,
                       pam_mult_att)
     
@@ -349,13 +349,14 @@ def recode(value):
              'alcohol', 'porn', 'hair', 'gaming', 'sitting', 'spend', 'temper', 'othermore']
     
     for ix, term in enumerate(terms):
-        if term in value:
+        if isinstance(value, str) and term in value:
             return ix 
 
         
 def selected_recode(df):
     
-    df['SAGE_behavior_choices_1_bl_v1___selected_recode'] = df['SAGE_behavior_choices_1_bl_v1___selected'].apply(recode)
+    df['SAGE_behavior_choices_1_bl_v1___selected_recode'] = df['SAGE_behavior_choices_1_bl_v1___selected'].apply(lambda x:\
+                                                            recode(x) if pd.notnull(x) else x)
     
     return df
 
