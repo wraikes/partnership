@@ -39,10 +39,10 @@ def merge_data(_dfs, _names, _id):
 
 def main():
     #NOTE TO SELF: redo the relative paths.
-    inquisit = '/home/wraikes/Dropbox/partnership/dmt/data/inquisit_final/'
-    os_file = '/home/wraikes/Programming/Partnership/dmt/final/merged_data/'
-    #inquisit = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt_temp'
-    #os_file = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
+    #inquisit = '/home/wraikes/Dropbox/partnership/dmt/data/inquisit_final/'
+    #os_file = '/home/wraikes/Programming/Partnership/dmt/final/merged_data/'
+    inquisit = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt\data\inquisit_final'
+    os_file = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
     os.chdir(inquisit)  
 
     bart = pd.read_csv('BART_Merged_9.15.17.csv')

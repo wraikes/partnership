@@ -3,10 +3,10 @@ from functools import reduce
 
 
 def main():
-    sage = '/home/wraikes/Dropbox/partnership/dmt/data/sage_final'
-    #sage = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt\data\sage_not_final'
-    file_to_write = '/home/wraikes/Programming/Partnership/dmt/final/merged_data'
-    #file_to_write = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
+    #sage = '/home/wraikes/Dropbox/partnership/dmt/data/sage_final'
+    sage = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt\data\sage_final'
+    #file_to_write = '/home/wraikes/Programming/Partnership/dmt/final/merged_data'
+    file_to_write = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
     os.chdir(sage)
     
     files_to_exclude = ['digital-marshmallow-status.csv',
@@ -149,7 +149,7 @@ def clean_common_dfs(directory, exclude_files, string):
             df = pd.read_csv(file)
             df = remove_dupes(df)
             if df_name in ('demographics-v2', 'generally_sem_diff_bl-v2'):
-                df = clean_df_dupe(df, 'yQ7pYy')
+                df = clean_df_dupe(df, 'yQ7pYy', -1)
             
             if len(df.externalId) == len(df.externalId.unique()):
                 df = col_relabel(df, df_name)
@@ -274,20 +274,27 @@ def clean_df(file, string, attributes, var_2=None):
     df = remove_dupes(df)
     
     if df_name == 'goNoGo-v2':
-        df = clean_df_dupe(df, 'ksJM3Y')
+        df = clean_df_dupe(df, 'ksJM3Y', -1)
+        df = clean_df_dupe(df, 'S6b4eL', 11)
+    
+    if df_name == 'delay_discounting_raw-v6':
+        df = clean_df_dupe(df, 'S6b4eL', 2)
+        
+    if df_name == 'discounting_raw-v2':
+        df = clean_df_dupe(df, 'S6b4eL', 5)
     
     if df_name == 'behavior_choices_4_bl-v2':
-        df = clean_df_dupe(df, 'yQ7pYy')
+        df = clean_df_dupe(df, 'yQ7pYy', -1)
     
     df = spread_cols(df, df_name, attributes, var_2)
     
     return df
 
 
-def clean_df_dupe(df, _id):
+def clean_df_dupe(df, _id, pos):
    
     indices = df.index[df.externalId == _id]
-    df.drop(indices[-1], axis=0, inplace=True)
+    df.drop(indices[pos], axis=0, inplace=True)
     
     return df
 

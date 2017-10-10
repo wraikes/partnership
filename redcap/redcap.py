@@ -3,9 +3,14 @@ from functools import reduce
 
 
 def data_clean(df):
-    if any(df['external_id'] == '2XyZyJ'):
-        ix = df.index[df['external_id'] == '2XyZyJ']
-        df = df.set_value(ix, 'external_id', '2XyVyJ')
+    wrong_ids = ['2XyZyJ', 'VytY4s', 'heVh5E', '4CUvwu']
+    right_ids = ['2XyVyJ', 'VytY4S', 'hEVh5E', '4CUvwZ']
+    
+    for wrong, right in zip(wrong_ids, right_ids):
+        if any(df['external_id'] == wrong):
+            ix = df.index[df['external_id'] == wrong]
+            df = df.set_value(ix, 'external_id', right)
+
     return df
 
 
@@ -85,10 +90,10 @@ def remove_dupes(df):
 
 def main():
     #NOTE TO SELF: redo the relative paths.
-    redcap = '/home/wraikes/Dropbox/partnership/dmt/data/redcap_final/'
-    os_file = '/home/wraikes/Programming/Partnership/dmt/final/merged_data/'
-    #redcap = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt_temp'
-    #os_file = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
+    #redcap = '/home/wraikes/Dropbox/partnership/dmt/data/redcap_final/'
+    #os_file = '/home/wraikes/Programming/Partnership/dmt/final/merged_data/'
+    redcap = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt\data\redcap_final'
+    os_file = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
     os.chdir(redcap)  
 
     block1 = pd.read_csv('REDCap_Block 1_Merged_9.15.17.csv')
