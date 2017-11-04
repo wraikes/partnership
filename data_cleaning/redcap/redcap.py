@@ -90,10 +90,10 @@ def remove_dupes(df):
 
 def main():
     #NOTE TO SELF: redo the relative paths.
-    #redcap = '/home/wraikes/Dropbox/partnership/dmt/data/redcap_final/'
-    #os_file = '/home/wraikes/Programming/Partnership/dmt/final/merged_data/'
-    redcap = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt\data\redcap_final'
-    os_file = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
+    redcap = '/home/wraikes/Dropbox/partnership/dmt/data/redcap_final/'
+    os_file = '/home/wraikes/Programming/Partnership/dmt/final/merged_data/'
+    #redcap = r'C:\Users\williamr.PDFK\Dropbox\partnership\dmt\data\redcap_final'
+    #os_file = r'H:\Documents\Python Scripts\dmt\partnership\merged_data'
     os.chdir(redcap)  
 
     block1 = pd.read_csv('REDCap_Block 1_Merged_9.15.17.csv')

@@ -1,11 +1,7 @@
 Data Cleaning:
 - Check all requested test/diff_study id's are removed from data.
 - Document which duplicates should be removed or recoded.
-- Create new data from Arrays.
-- Recode "selected" data into new columns & code labels.
 - Create documentation on data cleaning procedures.
-- Rectify columns that contain extra "_x" and "_y"
-- Make data format compatible with SPSS, is currently converted to strings.
 
 Project:
 - Review codebooks, go through websites, familiarize myself with data.
